@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lesson 20</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <ol id="monthes">
+    </ol>
+
+    <script>
+        $(document).ready(function(){
+            var monthes = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Nowember", "December"];
+            var delayTime = 1000;
+
+            for(let i = 0; i < monthes.length; i++){
+                WriteMonth(monthes[i], delayTime);
+                delayTime += 1000;
+            };
+
+            setTimeout(function(){
+                $("li:odd").css("color","red");
+            }, delayTime-500);            
+        });
+
+        //functions
+        function WriteMonth(month, time){
+            setTimeout(function(){
+                $("#monthes").append("<li>" + month + "</li>");
+            }, time);
+        };
+
+    </script>
+</body>
+</html>
